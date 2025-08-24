@@ -51,45 +51,50 @@ Edit
    ```
 Create and activate a virtual environment:
 
-bash
+```bash
 Copy
 Edit
 python -m venv venv
 source venv/bin/activate    # Linux/Mac
 venv\Scripts\activate       # Windows
+```
 Install dependencies:
 
-bash
+```bash
 Copy
 Edit
 pip install -r requirements.txt
+```
 ▶️ Usage
 Place your dataset in the data/ folder.
 
 Run preprocessing:
 
-bash
+```bash
 Copy
 Edit
 python src/preprocessing.py
+```
 Train or load the model:
 
-bash
+```bash
 Copy
 Edit
 python src/model.py
+```
 Run detection on sample data:
 
-bash
+```bash
 Copy
 Edit
 python src/detection.py --input data/test_images/
+```
 Generate report:
-
-bash
+```bash
 Copy
 Edit
 python src/reporting.py
+```
 📊 Sample Output
 Encroachment regions highlighted with bounding boxes.
 
