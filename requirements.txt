@@ -1,0 +1,7 @@
+ultralytics
+geopandas
+folium
+fastapi
+uvicorn
+python-multipart
+reportlab
