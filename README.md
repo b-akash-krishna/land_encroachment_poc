@@ -48,6 +48,7 @@ Edit
    ```bash
    git clone https://github.com/<your-username>/road-encroachment-poc.git
    cd road-encroachment-poc
+   ```
 Create and activate a virtual environment:
 
 bash
