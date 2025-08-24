@@ -1,63 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Encroachment Dashboard</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
-    <style>
-        #map { height: 800px; width: 100%; }
-    </style>
-</head>
-<body>
-    <h1>AI Drone Encroachment Dashboard</h1>
-    <div id="map"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
-    <script>
-        // Use a dummy location for the map center
-        var map = L.map('map').setView([10.02, 76.3], 13);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-        }).addTo(map);
-
-        // Fetch encroachment data from the backend
-        async function fetchEncroachments() {
-            try {
-                // For this PoC, we will simulate a call to the backend
-                // A real system would call the /analyze_image endpoint with an image.
-                const response = {
-                    "encroachments": [
-                        {
-                            "type": "building",
-                            "location": "POINT (76.31 10.025)",
-                            "affected_area_sq_m": 50,
-                            "nearest_boundary_id": "Main Road"
-                        },
-                        {
-                            "type": "fence",
-                            "location": "POINT (76.29 10.019)",
-                            "affected_area_sq_m": 15,
-                            "nearest_boundary_id": "Bypass Road"
-                        }
-                    ]
-                };
-                
-                // Add markers for each encroachment
-                response.encroachments.forEach(encroachment => {
-                    // Extract coordinates from the location string "POINT (lon lat)"
-                    const coords = encroachment.location.match(/\(([^)]+)\)/)[1].split(' ').map(parseFloat);
-                    const lon = coords[0];
-                    const lat = coords[1];
-                    
-                    L.marker([lat, lon]).addTo(map)
-                        .bindPopup(`<b>Encroachment Detected</b><br>Type: ${encroachment.type}<br>Area: ${encroachment.affected_area_sq_m} sq m<br>Near: ${encroachment.nearest_boundary_id}`);
-                });
-
-            } catch (error) {
-                console.error('Error fetching encroachment data:', error);
-            }
-        }
-
-        // Call the function to load the data when the page loads
-        fetchEncroachments();
-    </script>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

@@ -5,3 +5,12 @@ fastapi
 uvicorn
 python-multipart
 reportlab
+celery
+redis
+gevent
+psycopg2-binary
+sqlalchemy
+geoalchemy2
+python-jose
+python-multipart
+pillow
