@@ -124,7 +124,3 @@ This project is released under the MIT License.
 👨‍💻 Author
 Developed by Akash Krishna
 B.Tech in AI & ML | Final Year Project (PoC Stage)
-
-pgsql
-Copy
-Edit
