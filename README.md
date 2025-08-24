@@ -61,8 +61,7 @@ venv\Scripts\activate       # Windows
 Install dependencies:
 
 ```bash
-Copy
-Edit
+
 pip install -r requirements.txt
 ```
 ▶️ Usage
@@ -71,67 +70,20 @@ Place your dataset in the data/ folder.
 Run preprocessing:
 
 ```bash
-Copy
-Edit
 python src/preprocessing.py
 ```
 Train or load the model:
 
 ```bash
-Copy
-Edit
 python src/model.py
 ```
 Run detection on sample data:
 
 ```bash
-Copy
-Edit
 python src/detection.py --input data/test_images/
 ```
 Generate report:
 ```bash
-Copy
-Edit
 python src/reporting.py
 ```
-📊 Sample Output
 
-Encroachment regions highlighted with bounding boxes.
-
-Summary report listing:
-
-Number of violations
-
-Type of violation (blockage, construction, etc.)
-
-Location metadata (if available in dataset).
-
-🌍 Relevance & Impact
-
-Urban Governance: Helps authorities track illegal land usage.
-
-Infrastructure Planning: Supports smart city initiatives.
-
-Automation: Reduces reliance on manual inspections.
-
-Scalability: Extensible to real-time drone feeds for large-scale deployment.
-
-🔮 Future Enhancements
-
-Integration with real drone video feeds.
-
-Geotagging detected violations for precise mapping.
-
-Dashboard visualization for live monitoring.
-
-Advanced models for semantic segmentation of road and non-road areas.
-
-📜 License
-
-This project is released under the MIT License.
-
-👨‍💻 Author
-
-Developed by Akash Krishna
-B.Tech in AI & ML | Final Year Project (PoC Stage)
