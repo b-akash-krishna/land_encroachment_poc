@@ -44,7 +44,8 @@ Edit
 ---
 
 ## ⚙️ Installation & Setup
-1. Clone the repository:
+
+Clone the repository:
    ```bash
    git clone https://github.com/<your-username>/road-encroachment-poc.git
    cd road-encroachment-poc
