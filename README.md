@@ -1,13 +1,9 @@
 PoC MVP: AI-Powered Drone Surveillance for Land Encroachment Detection
-
 📌 Overview
 
 This repository contains a Proof-of-Concept (PoC) Minimum Viable Product (MVP) for detecting land encroachments on public roads using drone-based aerial imagery combined with AI-powered object detection and geospatial analysis.
 
 The system demonstrates how drones, computer vision, and GIS tools can be integrated to automatically flag unauthorized occupation of government-owned land. While this MVP runs on sample datasets and simulated inputs, it provides a modular foundation for real-world deployment.
-
-
----
 
 🏗 System Architecture
 
@@ -21,7 +17,6 @@ AI Object Detection: Pre-trained/fine-tuned YOLOv8 for detecting structures (e.g
 
 Output: Bounding box coordinates of detected objects.
 
-
 2. Backend & Geospatial Analysis
 
 Geospatial Data Handling: Uses GeoPandas to load shapefiles or OSM data.
@@ -32,19 +27,13 @@ Encroachment Flagging: Identifies and reports structures overlapping with public
 
 API: FastAPI backend to process inputs and serve results.
 
-
 3. Frontend & Reporting
 
 Dashboard: Web-based map visualization with Folium/Leaflet.
 
 Reporting: Generates structured PDF/JSON reports of flagged encroachments.
 
-
-
----
-
 📂 Project Structure
-
 land_encroachment_poc/
 ├── data/
 │   ├── aerial_images/      # Sample drone frames or video input
@@ -63,22 +52,17 @@ land_encroachment_poc/
 ├── run.sh                  # Startup script
 └── README.md
 
-
----
-
 📊 Sample Datasets & Simulation
 
-Aerial Images: Use datasets like Stanford Drone Dataset or VisDrone2019.
+Aerial Images: Use datasets like Stanford Drone Dataset
+ or VisDrone2019
+.
 
 Property Boundaries: Download from OpenStreetMap or create dummy shapefiles with QGIS.
 
 Drone Simulation: Use a Python script with OpenCV to convert video into sequential frames (simulate_input.py).
 
-
-
----
-
-⚙ Tech Stack
+⚙️ Tech Stack
 
 AI/Detection: Ultralytics YOLOv8
 
@@ -90,42 +74,31 @@ Visualization: Folium (Leaflet.js)
 
 Reporting: ReportLab
 
-
-
----
-
 🚀 How to Run
 
-1. Install dependencies:
+Install dependencies:
 
 pip install -r requirements.txt
 
 
-2. Prepare sample data:
+Prepare sample data:
 
 Place a video in data/aerial_images/ and run the simulation script.
 
 Add a roads.shp shapefile under data/gis_boundaries/.
 
-
-
-3. Run drone simulation:
+Run drone simulation:
 
 python data/simulated_data/simulate_input.py
 
 
-4. Start backend service:
+Start backend service:
 
 uvicorn src.backend.main:app --reload
 
 
-5. Open dashboard:
+Open dashboard:
 Open frontend/index.html in a browser to view flagged encroachments on a map.
-
-
-
-
----
 
 📌 Current Status
 
@@ -137,10 +110,6 @@ Open frontend/index.html in a browser to view flagged encroachments on a map.
 
 🚧 Next step: Integrate real drone live feed + georeferencing.
 
-
-
----
-
 🔮 Future Enhancements
 
 Real-time edge AI deployment on drones.
@@ -150,10 +119,6 @@ Automated georeferencing between imagery & GIS maps.
 Scalable multi-drone coordination.
 
 Automated compliance reporting for municipal authorities.
-
-
-
----
 
 🌍 Impact
 
