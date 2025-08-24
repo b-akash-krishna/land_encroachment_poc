@@ -96,6 +96,7 @@ Edit
 python src/reporting.py
 ```
 📊 Sample Output
+
 Encroachment regions highlighted with bounding boxes.
 
 Summary report listing:
@@ -107,6 +108,7 @@ Type of violation (blockage, construction, etc.)
 Location metadata (if available in dataset).
 
 🌍 Relevance & Impact
+
 Urban Governance: Helps authorities track illegal land usage.
 
 Infrastructure Planning: Supports smart city initiatives.
@@ -116,6 +118,7 @@ Automation: Reduces reliance on manual inspections.
 Scalability: Extensible to real-time drone feeds for large-scale deployment.
 
 🔮 Future Enhancements
+
 Integration with real drone video feeds.
 
 Geotagging detected violations for precise mapping.
@@ -125,8 +128,10 @@ Dashboard visualization for live monitoring.
 Advanced models for semantic segmentation of road and non-road areas.
 
 📜 License
+
 This project is released under the MIT License.
 
 👨‍💻 Author
+
 Developed by Akash Krishna
 B.Tech in AI & ML | Final Year Project (PoC Stage)
