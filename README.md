@@ -49,15 +49,13 @@ Edit
    git clone https://github.com/<your-username>/road-encroachment-poc.git
    cd road-encroachment-poc
    ```
-Create and activate a virtual environment:
+   Create and activate a virtual environment:
 
-```bash
-Copy
-Edit
-python -m venv venv
-source venv/bin/activate    # Linux/Mac
-venv\Scripts\activate       # Windows
-```
+   ```bash
+   python -m venv venv
+   source venv/bin/activate    # Linux/Mac
+   venv\Scripts\activate       # Windows
+   ```
 Install dependencies:
 
 ```bash
