@@ -1,125 +1,130 @@
-PoC MVP: AI-Powered Drone Surveillance for Land Encroachment Detection
-📌 Overview
+# AI-Powered Road Encroachment Detection (Proof of Concept)
 
-This repository contains a Proof-of-Concept (PoC) Minimum Viable Product (MVP) for detecting land encroachments on public roads using drone-based aerial imagery combined with AI-powered object detection and geospatial analysis.
+## 📌 Project Overview
+This project is a **proof of concept (PoC)** for an **AI-powered road surveillance system** that detects and reports public land encroachment by private entities.  
+The system simulates drone-based aerial monitoring using sample datasets (images/videos) to identify unauthorized constructions, road blockages, or land use violations.
 
-The system demonstrates how drones, computer vision, and GIS tools can be integrated to automatically flag unauthorized occupation of government-owned land. While this MVP runs on sample datasets and simulated inputs, it provides a modular foundation for real-world deployment.
+The solution demonstrates how computer vision and AI can assist **urban planning authorities, municipal corporations, and enforcement agencies** in automating surveillance and maintaining public infrastructure integrity.
 
-🏗 System Architecture
+---
 
-The project is divided into three main modules:
+## 🚀 Features
+- **Dataset Simulation**: Uses aerial/satellite image datasets to mimic drone surveillance.
+- **Encroachment Detection Model**: Employs CNN-based object detection/segmentation to identify anomalies like unauthorized structures or road obstructions.
+- **Violation Mapping**: Outputs detection results with bounding boxes and heatmaps.
+- **Automated Reporting (PoC)**: Generates alerts/reports summarizing detected encroachments.
 
-1. Data Processing Pipeline
+---
 
-Input: Aerial images (sample drone video frames or datasets).
+## 🏗️ System Architecture
+1. **Data Input**: Pre-collected aerial/drone images or sample datasets.
+2. **Preprocessing**: Image resizing, normalization, and augmentation.
+3. **Model**: Deep learning model (e.g., Faster R-CNN, YOLO, or UNet for segmentation).
+4. **Detection & Analysis**: Identify regions of potential encroachment.
+5. **Output**: Annotated images + structured report.
 
-AI Object Detection: Pre-trained/fine-tuned YOLOv8 for detecting structures (e.g., buildings, fences, vehicles).
+---
 
-Output: Bounding box coordinates of detected objects.
+## 📂 Project Structure
+├── data/ # Sample dataset (images/videos)
+├── notebooks/ # Jupyter notebooks for experimentation
+├── src/ # Source code for model training & inference
+│ ├── preprocessing.py
+│ ├── model.py
+│ ├── detection.py
+│ └── reporting.py
+├── outputs/ # Results (annotated images, reports)
+├── requirements.txt # Dependencies
+└── README.md # Project description
 
-2. Backend & Geospatial Analysis
+yaml
+Copy
+Edit
 
-Geospatial Data Handling: Uses GeoPandas to load shapefiles or OSM data.
+---
 
-Overlay & Analysis: Compares detected objects with legal land boundaries.
+## ⚙️ Installation & Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/<your-username>/road-encroachment-poc.git
+   cd road-encroachment-poc
+Create and activate a virtual environment:
 
-Encroachment Flagging: Identifies and reports structures overlapping with public land buffers.
-
-API: FastAPI backend to process inputs and serve results.
-
-3. Frontend & Reporting
-
-Dashboard: Web-based map visualization with Folium/Leaflet.
-
-Reporting: Generates structured PDF/JSON reports of flagged encroachments.
-
-📂 Project Structure
-land_encroachment_poc/
-├── data/
-│   ├── aerial_images/      # Sample drone frames or video input
-│   ├── gis_boundaries/     # Shapefiles (roads, land parcels)
-│   └── simulated_data/     # Scripts for generating sample drone input
-├── models/
-│   ├── yolov8n.pt          # Pre-trained YOLOv8 model
-│   └── custom_model.pt     # Fine-tuned weights (optional)
-├── src/
-│   ├── ai_detection/       # Object detection logic
-│   ├── gis_analysis/       # Geospatial overlay logic
-│   ├── backend/            # FastAPI service
-│   └── reports/            # PDF/JSON reporting
-├── frontend/               # Simple Leaflet/Folium dashboard
-├── requirements.txt        # Python dependencies
-├── run.sh                  # Startup script
-└── README.md
-
-📊 Sample Datasets & Simulation
-
-Aerial Images: Use datasets like Stanford Drone Dataset
- or VisDrone2019
-.
-
-Property Boundaries: Download from OpenStreetMap or create dummy shapefiles with QGIS.
-
-Drone Simulation: Use a Python script with OpenCV to convert video into sequential frames (simulate_input.py).
-
-⚙️ Tech Stack
-
-AI/Detection: Ultralytics YOLOv8
-
-Geospatial Analysis: GeoPandas, Shapely, OSMnx
-
-Backend: FastAPI + Uvicorn
-
-Visualization: Folium (Leaflet.js)
-
-Reporting: ReportLab
-
-🚀 How to Run
-
+bash
+Copy
+Edit
+python -m venv venv
+source venv/bin/activate    # Linux/Mac
+venv\Scripts\activate       # Windows
 Install dependencies:
 
+bash
+Copy
+Edit
 pip install -r requirements.txt
+▶️ Usage
+Place your dataset in the data/ folder.
 
+Run preprocessing:
 
-Prepare sample data:
+bash
+Copy
+Edit
+python src/preprocessing.py
+Train or load the model:
 
-Place a video in data/aerial_images/ and run the simulation script.
+bash
+Copy
+Edit
+python src/model.py
+Run detection on sample data:
 
-Add a roads.shp shapefile under data/gis_boundaries/.
+bash
+Copy
+Edit
+python src/detection.py --input data/test_images/
+Generate report:
 
-Run drone simulation:
+bash
+Copy
+Edit
+python src/reporting.py
+📊 Sample Output
+Encroachment regions highlighted with bounding boxes.
 
-python data/simulated_data/simulate_input.py
+Summary report listing:
 
+Number of violations
 
-Start backend service:
+Type of violation (blockage, construction, etc.)
 
-uvicorn src.backend.main:app --reload
+Location metadata (if available in dataset).
 
+🌍 Relevance & Impact
+Urban Governance: Helps authorities track illegal land usage.
 
-Open dashboard:
-Open frontend/index.html in a browser to view flagged encroachments on a map.
+Infrastructure Planning: Supports smart city initiatives.
 
-📌 Current Status
+Automation: Reduces reliance on manual inspections.
 
-✅ Proof-of-Concept pipeline implemented with sample datasets.
-
-✅ AI detection + GIS overlay integration.
-
-✅ Visualization and reporting modules working.
-
-🚧 Next step: Integrate real drone live feed + georeferencing.
+Scalability: Extensible to real-time drone feeds for large-scale deployment.
 
 🔮 Future Enhancements
+Integration with real drone video feeds.
 
-Real-time edge AI deployment on drones.
+Geotagging detected violations for precise mapping.
 
-Automated georeferencing between imagery & GIS maps.
+Dashboard visualization for live monitoring.
 
-Scalable multi-drone coordination.
+Advanced models for semantic segmentation of road and non-road areas.
 
-Automated compliance reporting for municipal authorities.
+📜 License
+This project is released under the MIT License.
 
-🌍 Impact
+👨‍💻 Author
+Developed by Akash Krishna
+B.Tech in AI & ML | Final Year Project (PoC Stage)
 
-This project demonstrates how AI + GIS + Drones can modernize land governance, urban planning, and smart city management by automating the detection of illegal encroachments.
+pgsql
+Copy
+Edit
